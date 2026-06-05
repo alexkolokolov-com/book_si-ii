@@ -1273,5 +1273,24 @@ if(tocEl){
 
 updateProgress();
 </script>
+
+<script>
+/* Сообщаем родительской странице (Тильде) свою реальную высоту */
+(function(){
+  function sendHeight(){
+    var h = Math.max(
+      document.body.scrollHeight, document.documentElement.scrollHeight,
+      document.body.offsetHeight, document.documentElement.offsetHeight
+    );
+    parent.postMessage({ siFrameHeight: h }, '*');
+  }
+  window.addEventListener('load', sendHeight);
+  window.addEventListener('resize', sendHeight);
+  // следим за изменениями контента (картинки догрузились, аккордеоны и т.п.)
+  if (window.ResizeObserver){ new ResizeObserver(sendHeight).observe(document.body); }
+  // и на всякий случай несколько раз после загрузки
+  [300,800,1500,3000].forEach(function(t){ setTimeout(sendHeight, t); });
+})();
+</script>
 </body>
 </html>
