@@ -571,7 +571,7 @@ html,body{max-width:100%;}
   <div class="atmo"></div>
   <div class="wrap">
     <div class="s2-grid">
-      <div class="s2-cover reveal"><img src="images/img_01.png" alt="Обложка книги «Синергия интеллектов»"></div>
+      <div class="s2-cover reveal"><picture><source srcset="images/img_01.webp" type="image/webp"><img src="images/img_01.png" alt="Обложка книги «Синергия интеллектов»" class="" loading="eager" decoding="async" style="opacity:0;transition:opacity .5s ease" onload="this.style.opacity=1"></picture></div>
       <div class="s2-right reveal">
         <h2>Научитесь разговаривать с&nbsp;ИИ, чтобы вы отсеивали рекрутеров, а не они вас.</h2>
         <div class="offer">
@@ -601,7 +601,7 @@ html,body{max-width:100%;}
 
 <!-- ============ SEC 3 : 3 CARDS ============ -->
 <section class="sec-pad has-photo" data-sec data-late>
-  <div class="bg-photo" style="background-image:url(images/img_02.jpg)"></div>
+  <div class="bg-photo" style="background-image:url(images/img_02.webp)"></div>
   <div class="wrap">
     <div class="cards-3">
       <div class="card reveal card-above-wrap">
@@ -757,7 +757,7 @@ html,body{max-width:100%;}
   <div class="wrap">
     <h2 class="section-title one-line reveal">Книга написана человеком!</h2>
     <div class="author-grid">
-      <div class="author-photo reveal"><img src="images/img_08.jpg" alt="Автор — Алексей Колоколов"></div>
+      <div class="author-photo reveal"><img src="images/img_08.webp" alt="Автор — Алексей Колоколов"></div>
       <div class="author-text reveal">
         <div class="author-name">Алексей Колоколов</div>
         <p>В ней я опираюсь на 16 лет опыта внедрения проектов корпоративной отчётности. Почему он релевантен теме ИИ? — да потому что все эти годы мне приходилось быть переводчиком с бизнес-языка на технический, работать с заказчиками, ожидавшими чуда от аналитики и прогнозирования. Что BI-система проанализирует данные и скажет, какие решения принимать. В общем, то же самое, что и с AI.</p>
@@ -913,7 +913,7 @@ html,body{max-width:100%;}
 
 <script>
 /* ===== data ===== */
-var PAGES = ["images/img_09.jpg","images/img_10.jpg","images/img_11.jpg","images/img_12.jpg","images/img_13.jpg","images/img_14.jpg"];
+var PAGES = ["images/img_09.webp","images/img_10.webp","images/img_11.webp","images/img_12.webp","images/img_13.webp","images/img_14.webp"];
 
 /* ===== OFFER timer + GetCourse widgets ===== */
 var OFFER_MS = 30*60*1000;            /* 30 минут */
@@ -1292,5 +1292,26 @@ updateProgress();
   [300,800,1500,3000].forEach(function(t){ setTimeout(sendHeight, t); });
 })();
 </script>
+
+<style>
+.si-footer{background:var(--black);color:var(--muted);padding:48px 24px;
+  text-align:center;font-family:'Gilroy',-apple-system,BlinkMacSystemFont,sans-serif;
+  border-top:1px solid rgba(255,255,255,.08);}
+.si-footer__copy{font-size:15px;color:var(--muted);margin:0 0 14px;}
+.si-footer__links{display:flex;flex-wrap:wrap;gap:8px 28px;justify-content:center;
+  align-items:center;list-style:none;padding:0;margin:0;}
+.si-footer__links a{color:var(--muted);text-decoration:none;font-size:14px;
+  transition:color .2s ease;}
+.si-footer__links a:hover{color:var(--accent);}
+@media(max-width:600px){.si-footer__links{flex-direction:column;gap:12px;}}
+</style>
+<footer class="si-footer">
+  <p class="si-footer__copy">© 2026 Институт Бизнес-аналитики</p>
+  <ul class="si-footer__links">
+    <li><a href="https://neyro.mba/privacy" target="_top">Политика конфиденциальности</a></li>
+    <li><a href="https://neyro.mba/oferta" target="_top">Публичная оферта</a></li>
+    <li><a href="https://neyro.mba/osnovnie_svedeniya" target="_top">Сведения об организации</a></li>
+  </ul>
+</footer>
 </body>
 </html>
